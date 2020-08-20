@@ -18,9 +18,13 @@
                  
             </head>
 	<body id="goToTop">
-        <div class="loader-wrapper">
-            <div class="square-loader"></div>
-        </div>
+               <!-- Preloader start -->
+    <div class="preloader">
+    <div class="spinner">
+        <img src="images/sha.gif" alt="">
+    </div>
+</div>
+<!-- Preloader End --> 
         <header>
             <div class="header-top">
                 <div class="footer-main01">
@@ -1325,10 +1329,5 @@ $(".preloader").delay(4500).slideUp(500);
         var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
     })();
 </script> -->
-<script>
-    $(window).on('load', function() {
-        $('.loader-wrapper').delay(500).slideUp('slow');
-    });
-</script>
 </body>
 </html>
