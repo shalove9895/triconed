@@ -1,0 +1,64 @@
+<style>
+  .loader-wrapper {
+    position: fixed;
+    left: 0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    background: #e4e4e4;
+  }
+  .loader-wrapper *,
+  .loader-wrapper *::before,
+  .loader-wrapper *::after {
+    box-sizing: border-box;
+  }
+  @keyframes rotate {
+    100% {
+      transform: rotate(1turn);
+    }
+  }
+  .square-loader {
+    position: relative;
+    z-index: 0;
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    margin-top: -150px;
+    margin-left: -150px;
+  }
+  .square-loader::before {
+    content: "";
+    position: absolute;
+    z-index: -2;
+    left: -50%;
+    top: -50%;
+    width: 200%;
+    height: 200%;
+    background-color: #ddd;
+    background-repeat: no-repeat;
+    background-size: 50% 50%, 50% 50%;
+    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+    background-image: linear-gradient(#595552, #595552),
+      linear-gradient(#595552, #595552), linear-gradient(#ddd, #ddd),
+      linear-gradient(#ddd, #ddd);
+    animation: rotate 4s linear infinite;
+  }
+  .square-loader::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 17px;
+    top: 17px;
+    width: calc(100% - 34px);
+    height: calc(100% - 34px);
+    background: #e4e4e4;
+    border-radius: 5px;
+  }
+</style>
+<div class="loader-wrapper">
+  <div class="square-loader"></div>
+</div>
